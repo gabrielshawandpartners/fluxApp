@@ -6,7 +6,9 @@ import Context from './context';
 import _ from 'lodash';
 import utils from 'util';
 import { EventEmitter } from 'events';
+import PropTypes from 'prop-types';
 import React from 'react';
+import createReactClass from 'create-react-class';
 import Router from './router';
 
 /**
@@ -177,16 +179,16 @@ FluxApp.prototype.registerPlugin = function registerPlugin(name, plugin) {
  * @param {String} name optional custom name for the context
  */
 FluxApp.prototype.createWrapper = function createWrapper(name) {
-  return React.createClass({
+  return createReactClass({
     displayName: name || 'fluxAppContext',
 
     PropTypes: {
-      handler: React.PropTypes.element.isRequired,
-      context: React.PropTypes.object.isRequired,
+      handler: PropTypes.element.isRequired,
+      context: PropTypes.object.isRequired,
     },
 
     childContextTypes: {
-      flux: React.PropTypes.object.isRequired,
+      flux: PropTypes.object.isRequired,
     },
 
     getChildContext() {
@@ -499,7 +501,7 @@ function getInstance() {
   instance.BaseStore = BaseStore;
 
   return instance;
-};
+}
 
 FluxApp.prototype.noConflict = getInstance;
 

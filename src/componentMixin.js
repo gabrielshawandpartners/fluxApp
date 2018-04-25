@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import _ from 'lodash';
 
 export default {
   contextTypes : {
-    flux : React.PropTypes.object.isRequired,
+    flux : PropTypes.object.isRequired,
   },
 
   /**

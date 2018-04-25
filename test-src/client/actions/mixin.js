@@ -1,5 +1,6 @@
 /* global describe, it, afterEach, document, sinon, expect */
 import React from 'react';
+import createReactClass from 'create-react-class';
 import DOM from '../lib/dom';
 import Promise from 'bluebird';
 import fluxapp, { BaseActions } from '../../../lib';
@@ -10,7 +11,7 @@ export default () => {
 
     function renderComponent(spec, context) {
       const elem = document.createElement('div');
-      const Component = React.createClass(spec);
+      const Component = createReactClass(spec);
 
       context = context && context.context ? context.context : fluxapp.createContext(context);
       const ContextWrapper = context.wrapper;

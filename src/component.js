@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import _ from 'lodash';
 import namespaceTransform from './util/namespaceTransform';
 
 export default class fluxappComponent extends Component {
   static contextTypes = {
-    flux : React.PropTypes.object.isRequired,
+    flux : PropTypes.object.isRequired,
   }
 
   constructor(props, context, updater) {

@@ -24,9 +24,11 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.7",
+    "create-react-class": "^15.6.3",
     "jsx-loader": "^0.13.2",
     "lodash": "^4.17.x",
     "node-uuid": "^1.4.7",
+    "prop-types": "^15.6.1",
     "route-parser": "0.0.5",
     "seamless-immutable": "^7.0.1"
   },
@@ -57,6 +59,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "peerDependencies": {
-    "react": "^0.13.0 || ^0.14.0 || ^15.0.0"
+    "react": "^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0"
   }
 }
