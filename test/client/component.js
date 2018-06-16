@@ -35,8 +35,8 @@ var TestComponent = (function (_Component) {
   }
 
   _createClass(TestComponent, [{
-    key: '_componentWillMount',
-    value: function _componentWillMount() {
+    key: '_componentDidMount',
+    value: function _componentDidMount() {
       if (this.props.spies.will) {
         this.props.spies.will();
       }
@@ -82,7 +82,7 @@ describe('Component', function () {
   }
 
   describe('lifecycle', function () {
-    it('should call _componentWillMount', function () {
+    it('should call _componentDidMount', function () {
       var Comp = (function (_TestComponent) {
         _inherits(Comp, _TestComponent);
 
@@ -128,7 +128,7 @@ describe('Component', function () {
       (0, _chai.expect)(un.callCount).to.equal(1);
     });
 
-    it('should proxy componentWillMount', function () {
+    it('should proxy componentDidMount', function () {
       var will = sinon.spy();
       var Comp = (function (_TestComponent3) {
         _inherits(Comp, _TestComponent3);
@@ -140,8 +140,8 @@ describe('Component', function () {
         }
 
         _createClass(Comp, [{
-          key: 'componentWillMount',
-          value: function componentWillMount() {
+          key: 'componentDidMount',
+          value: function componentDidMount() {
             this.props.spies.will();
           }
         }]);

@@ -5,7 +5,7 @@ import fluxapp, { Component } from '../../lib';
 import { expect } from 'chai';
 
 const TestComponent = class extends Component {
-  _componentWillMount() {
+  _componentDidMount() {
     if (this.props.spies.will) {
       this.props.spies.will();
     }
@@ -45,7 +45,7 @@ describe('Component', function() {
   }
 
   describe('lifecycle', () => {
-    it('should call _componentWillMount', () => {
+    it('should call _componentDidMount', () => {
       const Comp = class extends TestComponent {};
       const will = sinon.spy();
 
@@ -71,10 +71,10 @@ describe('Component', function() {
       expect(un.callCount).to.equal(1);
     });
 
-    it('should proxy componentWillMount', () => {
+    it('should proxy componentDidMount', () => {
       const will = sinon.spy();
       const Comp = class extends TestComponent {
-        componentWillMount() {
+        componentDidMount() {
           this.props.spies.will();
         }
       };

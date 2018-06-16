@@ -25,7 +25,7 @@ export default class fluxappComponent extends Component {
   }
 
   _ensureLifecycleMethods() {
-    const lifecycle = [ 'componentWillMount', 'componentWillUnmount' ];
+    const lifecycle = [ 'componentDidMount', 'componentWillUnmount' ];
 
     _.each(lifecycle, (method) => {
       const childMethod = this[method];
@@ -152,7 +152,7 @@ export default class fluxappComponent extends Component {
   }
 
 
-  _componentWillMount() {
+  _componentDidMount() {
     _.each(this._storeMap, (stores, method) => this._bindStores(stores, method));
   }
 
